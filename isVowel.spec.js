@@ -3,20 +3,28 @@ const isVowel = require(".");
 
 let failes = 0;
 
-console.log("isVowel retorna true para a letra 'a'");
-try {
-  assert.ok(isVowel("a"));
-  console.log("OK");
-} catch (err) {
-  console.error("FAIL");
-  failes++;
-}
+const tests = [];
+const test = (name, fn) => { tests.push({ name, fn }) };
 
-console.log("isVowel retorna true para a letra 'c'");
-try {
+test("isVowel retorna true para a letra 'a'", () => {
+  assert.equal(isVowel("a"), true);
+});
+
+test("isVowel retorna true para a letra 'c'", () => {
   assert.equal(isVowel("c"), false);
-  console.log("OK");
-} catch (err) {
-  console.error("FAIL");
-  failes++;
+});
+
+tests.forEach(({ name, fn }) => {
+  try {
+    fn();
+    console.log(`${name} passed`);
+  } catch (error) {
+    console.error(`${name} failed`);
+    console.error(error);
+    failes++;
+  }
+});
+
+if(failes >= 0){
+  console.log("Cantidad de failes: ", failes);
 }
