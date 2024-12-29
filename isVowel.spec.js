@@ -1,14 +1,22 @@
+const assert = require("assert");
 const isVowel = require(".");
+
+let failes = 0;
+
 console.log("isVowel retorna true para a letra 'a'");
-if(isVowel("a") == true){
+try {
+  assert.ok(isVowel("a"));
   console.log("OK");
-} else {
+} catch (err) {
   console.error("FAIL");
+  failes++;
 }
 
 console.log("isVowel retorna true para a letra 'c'");
-if(isVowel("c") == false){
+try {
+  assert.equal(isVowel("c"), false);
   console.log("OK");
-} else {
+} catch (err) {
   console.error("FAIL");
+  failes++;
 }
