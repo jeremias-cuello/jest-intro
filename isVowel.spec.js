@@ -20,7 +20,7 @@ tests.forEach(({ name, fn }) => {
     console.log(`${name} passed`);
   } catch (error) {
     console.error(`${name} failed`);
-    console.error(error);
+    console.error(`Expected ${error.expected} but received ${error.actual}`);
     failes++;
   }
 });
