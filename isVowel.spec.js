@@ -1,9 +1,15 @@
 const isVowel = require(".");
 
-test("isVowel retorna true para a letra 'a'", () => {
-  expect(isVowel("a")).toBe(true);
-});
+describe('isVowel', () => {
+  it("Letra 'a'", () => {
+    expect(isVowel("a")).toBe(true);
+  });
 
-test("isVowel retorna true para a letra 'c'", () => {
-  expect(isVowel("c")).toBe(false);
+  it("Letra 'A'", () => {
+    expect(isVowel("A")).toBe(true);
+  });
+
+  it("Letra 'c'", () => {
+    expect(isVowel("c")).toBe(false);
+  });
 });
