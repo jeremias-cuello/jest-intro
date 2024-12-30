@@ -1,1 +1,1 @@
-module.exports = char => 'eiou'.includes(char);
+module.exports = char => 'aeiou'.includes(char);
