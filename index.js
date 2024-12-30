@@ -1,1 +1,1 @@
-module.exports = char => 'aeiou'.includes(char);
+module.exports = char => 'aeiou'.includes(char.toLowerCase());
