@@ -5,7 +5,7 @@ describe('isVowel', () => {
     expect(isVowel("a")).toBe(true);
   });
 
-  it("Deberia retornar true para input 'A'", () => {
+  it.only("Deberia retornar true para input 'A'", () => {
     expect(isVowel("A")).toBe(true);
   });
 
