@@ -1,11 +1,11 @@
 const isVowel = require(".");
 
-describe('isVowel', () => {
-  it.skip("Deberia retornar true para input 'a'", () => {
+describe("isVowel", () => {
+  it("Deberia retornar true para input 'a'", () => {
     expect(isVowel("a")).toBe(true);
   });
 
-  it.skip("Deberia retornar true para input 'A'", () => {
+  it("Deberia retornar true para input 'A'", () => {
     expect(isVowel("A")).toBe(true);
   });
 
