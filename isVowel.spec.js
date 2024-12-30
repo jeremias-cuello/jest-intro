@@ -1,6 +1,18 @@
-const { isVowel, countVowels } = require(".");
+const { isVowel, countVowels, StringInvalidError } = require(".");
 
 describe("isVowel", () => {
+
+  it("Deberia arrojar un error si no es String", () => {
+    expect(() => isVowel()).toThrow(TypeError);
+    expect(() => isVowel(123)).toThrow(TypeError);
+    expect(() => isVowel(["length 1"])).toThrow(TypeError);
+  });
+
+  it("Deberia arrojar error si string no tiene length 1", () => {
+    expect(() => isVowel("")).toThrow(StringInvalidError);
+    expect(() => isVowel("12")).toThrow(StringInvalidError);
+  });
+
   it("Deberia retornar true para input 'a'", () => {
     expect(isVowel("a")).toBeTruthy();
   });
